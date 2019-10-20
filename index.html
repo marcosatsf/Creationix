@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title> Creationax </title>
+	<link rel="stylesheet" href="style.css">
+	<script src="interface.js"></script>
+</head>
+<body id='corpo'>
+	<div>
+		<table id="tela">
+			<tr>
+				<th>
+					<canvas id='canv'></canvas>		
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<table id="tableMenu">
+						<tr>
+							<td class="optionMenu">Tamanho pincel:<br> <input id="strokeW" type="number" value="3" min="0" max="80"></input></td>
+							<td class="optionMenu">Cor pincel:<br><input id="strokeC" type="color"></input></td>
+							<td class="optionMenu">Upload:<br><input type="file" id="imageLoader" name="imageLoader" style="z-index: 2;"/></td>
+							<td class="optionMenu">
+								<a id="download" download="canvas.png"><button type="button" id="downButton">Download</button></a>
+							</td>							
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
