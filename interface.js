@@ -30,13 +30,13 @@ window.addEventListener("load", function(){
         ctx.lineCap = "round";
         ctx.lineWidth = document.getElementById("strokeW").value;
         ctx.strokeStyle = document.getElementById("strokeC").value;
-        ctx.lineTo(e.clientX-window.innerWidth/4, e.clientY);
+        ctx.lineTo((e.clientX-window.innerWidth/4)-16, e.clientY-25);
         ctx.stroke();
         ctx.beginPath();
-        ctx.lineTo(e.clientX-window.innerWidth/4, e.clientY);
+        ctx.lineTo((e.clientX-window.innerWidth/4)-16, e.clientY-25);
     }
 
-    
+    /*
     function loadingDownload(){
         buttonDown.disabled = true;
         setTimeout(function (){buttonDown.disabled = false;},2000);
@@ -45,12 +45,12 @@ window.addEventListener("load", function(){
     function resetLoadingDownload(){
         clearTimeout(timeId);
         buttonDown.disabled = true;
-    }
+    }*/
 
     function doAnimation(){
         var bg = document.getElementById("corpo").style;
         bg.backgroundImage = "linear-gradient(90deg, rgb(254, 255, 210), rgb(209, 153, 0))";
-        var img = document.querySelector('#canv').toDataURL("image/png").replace("image/png","image/octet-stream");
+        var img = document.querySelector('#canv').toDataURL("image/png",1);
         var download = document.getElementById("download");
         download.setAttribute("href", img);
         setTimeout(clearAnimation, 2000);
@@ -84,6 +84,8 @@ window.addEventListener("load", function(){
     buttonUp.addEventListener("change", handleImage,false);
 });
 
-
-
+(function titleMarquee() {
+    document.title = document.title.substring(1)+document.title.substring(0,1);
+    setTimeout(titleMarquee, 200);
+})();
 
